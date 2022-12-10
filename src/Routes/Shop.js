@@ -17,10 +17,10 @@ const Shop = () => {
                 setItems(itemsData.products);
                 setGoodFetch(true);
             } else if (itemsResponse.status === 404) {
-                setErrorMessage(`Item list not found.`);
+                setErrorMessage(`Product list not found.`);
                 setGoodFetch(false);
             } else {
-                setErrorMessage("Bad Request");
+                setErrorMessage("Unknown Request");
                 setGoodFetch(false);
             }
         } catch (error) {

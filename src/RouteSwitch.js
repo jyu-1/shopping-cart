@@ -1,11 +1,11 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./components/Home";
-import Shop from "./components/Shop";
-import Cart from "./components/Cart";
+import Home from "./Routes/Home";
+import Shop from "./Routes/Shop";
+import Cart from "./Routes/Cart";
+import NotFound from "./Routes/NotFound";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ItemPage from "./components/ItemPage";
-import NotFound from "./components/NotFound";
 
 const RouteSwitch = () => {
     return (

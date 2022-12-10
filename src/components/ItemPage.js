@@ -18,10 +18,10 @@ const ItemPage = () => {
                 setItem(itemData);
                 setGoodFetch(true);
             } else if (itemResponse.status === 404) {
-                setErrorMessage(`${productId} not found.`);
+                setErrorMessage(`Product ${productId} not found.`);
                 setGoodFetch(false);
             } else {
-                setErrorMessage("Bad Request");
+                setErrorMessage("Unknown Request");
                 setGoodFetch(false);
             }
         } catch (error) {

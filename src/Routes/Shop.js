@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import ShopItem from "../components/ShopItem";
 
 const Shop = () => {
     const [items, setItems] = useState([]);
@@ -39,9 +39,7 @@ const Shop = () => {
             {goodFetch ? (
                 <div>
                     {items.map((item) => (
-                        <div key={item.id}>
-                            <Link to={`/shop/${item.id}`}>{item.title}</Link>
-                        </div>
+                        <ShopItem key={item.id} item={item} />
                     ))}
                 </div>
             ) : (

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import StarReview from "./StarReview";
 
 const ItemPage = () => {
     const [item, setItem] = useState({ images: "" });
@@ -17,8 +18,6 @@ const ItemPage = () => {
                 const itemData = await itemResponse.json();
                 setItem(itemData);
                 setGoodFetch(true);
-
-                console.log(itemData);
             } else if (itemResponse.status === 404) {
                 setErrorMessage(`Product ${productId} not found.`);
                 setGoodFetch(false);
@@ -45,7 +44,7 @@ const ItemPage = () => {
                     <div>
                         <div>Brand: {item.brand}</div>
                         <div>{item.title}</div>
-                        <div>★★★★★ ({item.rating})</div>
+                        <StarReview rating={item.rating} />({item.rating})
                         <hr />
                         <div>${item.price}</div>
                         <div>{item.stock} in stock</div>

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import StarReview from "./StarReview";
 
 const ShopItem = (props) => {
     return (
@@ -13,7 +14,7 @@ const ShopItem = (props) => {
             </Link>
             <hr />
             <div>{props.item.title}</div>
-            <div>★★★★★ ({props.item.rating})</div>
+            <StarReview rating={props.item.rating} /> ({props.item.rating})
             <div>${props.item.price}</div>
         </div>
     );

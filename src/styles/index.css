@@ -49,6 +49,19 @@ nav > a,
     justify-content: center;
 }
 
+/* Shop */
+.shop {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Shop Item */
+.shop-item {
+    border: 1px solid grey;
+    margin: 10px;
+}
+
 /* Footer */
 footer {
     flex: 0 0 50px;

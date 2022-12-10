@@ -37,7 +37,7 @@ const Shop = () => {
     return (
         <div className="main-flex">
             {goodFetch ? (
-                <div>
+                <div className="shop">
                     {items.map((item) => (
                         <ShopItem key={item.id} item={item} />
                     ))}

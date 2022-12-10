@@ -1,9 +1,8 @@
 import { Link } from "react-router-dom";
 
 const ShopItem = (props) => {
-    console.log(props.item);
     return (
-        <div>
+        <div className="shop-item">
             <Link to={`/shop/${props.item.id}`}>
                 <img
                     src={props.item.thumbnail}
@@ -12,8 +11,9 @@ const ShopItem = (props) => {
                     width={300}
                 />
             </Link>
+            <hr />
             <div>{props.item.title}</div>
-            <div style={{ color: "red" }}>★★★★★ ({props.item.rating})</div>
+            <div>★★★★★ ({props.item.rating})</div>
             <div>${props.item.price}</div>
         </div>
     );

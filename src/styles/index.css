@@ -62,6 +62,16 @@ nav > a,
     margin: 10px;
 }
 
+/* Item Page */
+.item-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.item-page > img {
+}
+
 /* Footer */
 footer {
     flex: 0 0 50px;

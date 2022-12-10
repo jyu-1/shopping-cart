@@ -17,6 +17,8 @@ const ItemPage = () => {
                 const itemData = await itemResponse.json();
                 setItem(itemData);
                 setGoodFetch(true);
+
+                console.log(itemData);
             } else if (itemResponse.status === 404) {
                 setErrorMessage(`Product ${productId} not found.`);
                 setGoodFetch(false);
@@ -38,14 +40,24 @@ const ItemPage = () => {
     return (
         <div className="main-flex">
             {goodFetch ? (
-                <div>
-                    <div>{item.title}</div>
-                    <div>{item.description}</div>
-                    <div>{item.brand}</div>
-                    <div>{item.price}</div>
-                    <div>{item.rating}</div>
-                    <div>{item.stock}</div>
+                <div className="item-page">
                     <img src={item.images[0]} alt="product" />
+                    <div>
+                        <div>Brand: {item.brand}</div>
+                        <div>{item.title}</div>
+                        <div>★★★★★ ({item.rating})</div>
+                        <hr />
+                        <div>${item.price}</div>
+                        <div>{item.stock} in stock</div>
+                        <div>{item.description}</div>
+                        <input
+                            type="number"
+                            placeholder="Quantity"
+                            defaultValue="1"
+                            min={1}
+                        ></input>
+                        <button>Add to Cart</button>
+                    </div>
                 </div>
             ) : (
                 <div>{errorMessage}</div>

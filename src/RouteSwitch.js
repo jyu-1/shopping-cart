@@ -14,7 +14,6 @@ const RouteSwitch = () => {
     const [totalPrice, setToalPrice] = useState(0);
 
     const addItem = (itemObject, itemQuantity) => {
-        console.log(itemObject);
         setCartItem(() => {
             if (cartItem.some((item) => item.id === itemObject.id)) {
                 return cartItem.map((e) => {

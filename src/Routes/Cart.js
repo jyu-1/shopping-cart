@@ -12,6 +12,10 @@ const Cart = (props) => {
         }
     }, [props.cartItem.length]);
 
+    useEffect(() => {
+        document.title = `Modern Styles | Cart (${props.itemCount})`;
+    }, [props.itemCount]);
+
     const quantityValidity = (id, num) => {
         if (num > 0) {
             props.updateQuantity(id, num);

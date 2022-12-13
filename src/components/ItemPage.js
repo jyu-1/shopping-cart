@@ -40,8 +40,11 @@ const ItemPage = (props) => {
 
     useEffect(() => {
         fetchItem(id);
-        console.log("fetch item");
     }, [id]);
+
+    useEffect(() => {
+        document.title = `Modern Styles | ${item.title}`;
+    }, [item.title]);
 
     return (
         <div className="main-flex">

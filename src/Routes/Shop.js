@@ -31,7 +31,7 @@ const Shop = (props) => {
 
     useEffect(() => {
         fetchItems();
-        console.log("fetch items");
+        document.title = "Modern Styles | Shop";
     }, []);
 
     return (

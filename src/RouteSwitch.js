@@ -74,6 +74,7 @@ const RouteSwitch = () => {
                             deleteItem={deleteItem}
                             totalPrice={totalPrice}
                             updateQuantity={updateQuantity}
+                            itemCount={itemCount}
                         />
                     }
                 />

@@ -26,6 +26,8 @@ nav {
     align-items: center;
     background-color: grey;
     color: white;
+    position: sticky;
+    top: 0;
 }
 
 .nav-links {

@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import StarReview from "./StarReview";
 
-const ItemPage = () => {
+const ItemPage = (props) => {
     const [item, setItem] = useState({ images: "" });
     const [goodFetch, setGoodFetch] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
+    const [quantity, setQuantity] = useState(1);
     const { id } = useParams();
 
     const fetchItem = async (productId) => {
@@ -52,10 +53,19 @@ const ItemPage = () => {
                         <input
                             type="number"
                             placeholder="Quantity"
-                            defaultValue="1"
                             min={1}
+                            value={quantity}
+                            onChange={(e) => {
+                                setQuantity(Number(e.target.value));
+                            }}
                         ></input>
-                        <button>Add to Cart</button>
+                        <button
+                            onClick={() => {
+                                props.addItem(item, quantity);
+                            }}
+                        >
+                            Add to Cart
+                        </button>
                     </div>
                 </div>
             ) : (

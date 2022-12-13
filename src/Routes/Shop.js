@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import ShopItem from "../components/ShopItem";
 
-const Shop = () => {
+const Shop = (props) => {
     const [items, setItems] = useState([]);
     const [goodFetch, setGoodFetch] = useState(true);
     const [errorMessage, setErrorMessage] = useState("");
@@ -39,7 +39,11 @@ const Shop = () => {
             {goodFetch ? (
                 <div className="shop">
                     {items.map((item) => (
-                        <ShopItem key={item.id} item={item} />
+                        <ShopItem
+                            key={item.id}
+                            item={item}
+                            addItem={props.addItem}
+                        />
                     ))}
                 </div>
             ) : (

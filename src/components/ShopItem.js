@@ -16,6 +16,13 @@ const ShopItem = (props) => {
             <div>{props.item.title}</div>
             <StarReview rating={props.item.rating} /> ({props.item.rating})
             <div>${props.item.price}</div>
+            <button
+                onClick={() => {
+                    props.addItem(props.item, 1);
+                }}
+            >
+                Add To Cart
+            </button>
         </div>
     );
 };

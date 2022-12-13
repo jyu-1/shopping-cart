@@ -18,7 +18,10 @@ const RouteSwitch = () => {
             if (cartItem.some((item) => item.id === itemObject.id)) {
                 return cartItem.map((e) => {
                     if (e.id === itemObject.id) {
-                        return { ...e, quantity: e.quantity + itemQuantity };
+                        return {
+                            ...e,
+                            quantity: e.quantity + itemQuantity,
+                        };
                     } else {
                         return e;
                     }

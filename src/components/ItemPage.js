@@ -32,6 +32,12 @@ const ItemPage = (props) => {
         }
     };
 
+    const quantityValidity = (num) => {
+        if (num > 0) {
+            setQuantity(num);
+        }
+    };
+
     useEffect(() => {
         fetchItem(id);
         console.log("fetch item");
@@ -56,7 +62,7 @@ const ItemPage = (props) => {
                             min={1}
                             value={quantity}
                             onChange={(e) => {
-                                setQuantity(Number(e.target.value));
+                                quantityValidity(Number(e.target.value));
                             }}
                         />
                         <button

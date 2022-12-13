@@ -12,6 +12,12 @@ const Cart = (props) => {
         }
     }, [props.cartItem.length]);
 
+    const quantityValidity = (id, num) => {
+        if (num > 0) {
+            props.updateQuantity(id, num);
+        }
+    };
+
     return (
         <div className="main-flex">
             {emptyCart ? (
@@ -39,7 +45,7 @@ const Cart = (props) => {
                                     min={1}
                                     value={e.quantity}
                                     onChange={(event) => {
-                                        props.updateQuantity(
+                                        quantityValidity(
                                             e.id,
                                             Number(event.target.value)
                                         );

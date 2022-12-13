@@ -58,7 +58,7 @@ const ItemPage = (props) => {
                             onChange={(e) => {
                                 setQuantity(Number(e.target.value));
                             }}
-                        ></input>
+                        />
                         <button
                             onClick={() => {
                                 props.addItem(item, quantity);

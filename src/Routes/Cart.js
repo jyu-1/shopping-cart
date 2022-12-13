@@ -32,7 +32,19 @@ const Cart = (props) => {
                                 <hr />
                                 <div>{e.title}</div>
                                 <div>${e.price}</div>
-                                <div>Quantity: {e.quantity}</div>
+                                Quantity
+                                <input
+                                    type="number"
+                                    placeholder="Quantity"
+                                    min={1}
+                                    value={e.quantity}
+                                    onChange={(event) => {
+                                        props.updateQuantity(
+                                            e.id,
+                                            Number(event.target.value)
+                                        );
+                                    }}
+                                />
                                 <button
                                     onClick={() => {
                                         props.deleteItem(e.id);

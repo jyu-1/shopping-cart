@@ -33,7 +33,15 @@ const RouteSwitch = () => {
         setCartItem(cartItem.filter((item) => item.id !== itemId));
     };
 
-    const updateQuantity = () => {};
+    const updateQuantity = (itemId, itemQuantity) => {
+        setCartItem(
+            cartItem.map((item) => {
+                if (item.id === itemId) {
+                    return { ...item, quantity: itemQuantity };
+                } else return item;
+            })
+        );
+    };
 
     useEffect(() => {
         setTotalPrice(

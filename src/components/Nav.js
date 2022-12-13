@@ -1,21 +1,37 @@
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 const Nav = (props) => {
+    const activeClassName = "active-nav-class";
     return (
         <nav>
-            <Link to="/">
+            <NavLink
+                to="/"
+                className={({ isActive }) =>
+                    isActive ? activeClassName : undefined
+                }
+            >
                 <div className="logo active-nav">LAUREN</div>
-            </Link>
+            </NavLink>
             <ul className="nav-links">
-                <Link to="/shop">
+                <NavLink
+                    to="/shop"
+                    className={({ isActive }) =>
+                        isActive ? activeClassName : undefined
+                    }
+                >
                     <li className="active-nav">SHOP</li>
-                </Link>
-                <Link to="/cart">
+                </NavLink>
+                <NavLink
+                    to="/cart"
+                    className={({ isActive }) =>
+                        isActive ? activeClassName : undefined
+                    }
+                >
                     <li className="cart-align active-nav">
                         <CartIcon />
                         <span className="cart-number">{props.itemCount}</span>
                     </li>
-                </Link>
+                </NavLink>
             </ul>
         </nav>
     );

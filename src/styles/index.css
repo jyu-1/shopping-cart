@@ -81,25 +81,45 @@ nav > a,
     font-size: 3rem;
 }
 
+li.active-nav {
+    height: 70px;
+    display: flex;
+    align-items: center;
+}
+
 .active-nav {
     position: relative;
     padding: 15px 10px;
 }
 
-.active-nav:before {
+.active-nav::before {
     content: "";
     position: absolute;
-    height: 2px;
+    height: 3px;
     width: 100%;
     background-color: #000000;
     left: 0;
-    bottom: 0px;
+    bottom: 5px;
     transform: scale(0, 1);
     transition: transform 0.25s ease;
 }
 
 .active-nav:hover::before {
     transform: scale(1, 1);
+}
+
+.active-nav-class {
+    position: relative;
+}
+
+.active-nav-class::before {
+    content: "";
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #000000;
+    left: 0;
+    bottom: 5px;
 }
 
 /* Main */

@@ -13,7 +13,7 @@ const Cart = (props) => {
     }, [props.cartItem.length]);
 
     useEffect(() => {
-        document.title = `Modern Styles | Cart (${props.itemCount})`;
+        document.title = `Lauren Official | Cart (${props.itemCount})`;
     }, [props.itemCount]);
 
     const quantityValidity = (id, num) => {

@@ -43,7 +43,9 @@ const ItemPage = (props) => {
     }, [id]);
 
     useEffect(() => {
-        document.title = `Modern Styles | ${item.title}`;
+        if (item.title !== undefined) {
+            document.title = `Lauren Official | ${item.title}`;
+        }
     }, [item.title]);
 
     return (

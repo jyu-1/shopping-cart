@@ -31,7 +31,7 @@ const Shop = (props) => {
 
     useEffect(() => {
         fetchItems();
-        document.title = "Modern Styles | Shop";
+        document.title = "Lauren Official | Shop";
     }, []);
 
     return (

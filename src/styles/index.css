@@ -20,12 +20,12 @@ body {
 
 /* Nav Bar */
 nav {
-    flex: 0 0 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: sticky;
     top: 0;
+    width: 100%;
     background-color: rgba(255, 255, 255, 0.8);
 }
 
@@ -81,6 +81,27 @@ nav > a,
     font-size: 3rem;
 }
 
+.active-nav {
+    position: relative;
+    padding: 15px 10px;
+}
+
+.active-nav:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #000000;
+    left: 0;
+    bottom: 0px;
+    transform: scale(0, 1);
+    transition: transform 0.25s ease;
+}
+
+.active-nav:hover::before {
+    transform: scale(1, 1);
+}
+
 /* Main */
 .main-flex {
     flex: 1;
@@ -133,6 +154,44 @@ nav > a,
     cursor: pointer;
     background-color: rgba(0, 0, 0, 0.5);
     border: 2px solid white;
+}
+
+/* Radio Button */
+.img-sel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: fixed;
+    top: 50%;
+    left: 95%;
+}
+
+input[type="radio"]:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffffff;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid white;
+}
+
+input[type="radio"]:checked:after {
+    width: 15px;
+    height: 15px;
+    border-radius: 15px;
+    top: -2px;
+    left: -1px;
+    position: relative;
+    background-color: #ffa500;
+    content: "";
+    display: inline-block;
+    visibility: visible;
+    border: 1px solid white;
 }
 
 /* Cart */

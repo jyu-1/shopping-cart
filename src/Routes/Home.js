@@ -11,9 +11,53 @@ const Home = () => {
         document.title = "Lauren Official | Home";
     }, []);
 
+    const imgJump = (imgString) => {
+        document
+            .getElementById(imgString)
+            .scrollIntoView({ behavior: "smooth" });
+    };
+
     return (
         <div className="home-page">
-            <img src={home1} alt="pic1" />
+            <div className="img-sel">
+                <input
+                    type="radio"
+                    name="img-selector"
+                    defaultChecked={true}
+                    onClick={() => {
+                        imgJump("img1");
+                    }}
+                />
+                <input
+                    type="radio"
+                    name="img-selector"
+                    onClick={() => {
+                        imgJump("img2");
+                    }}
+                />
+                <input
+                    type="radio"
+                    name="img-selector"
+                    onClick={() => {
+                        imgJump("img3");
+                    }}
+                />
+                <input
+                    type="radio"
+                    name="img-selector"
+                    onClick={() => {
+                        imgJump("img4");
+                    }}
+                />
+                <input
+                    type="radio"
+                    name="img-selector"
+                    onClick={() => {
+                        imgJump("img5");
+                    }}
+                />
+            </div>
+            <img src={home1} alt="pic1" id="img1" />
             <div className="home-text">
                 <div>NEW STYLES WEEKLY</div>
                 <div>BEST FASHION STORE OF 2022</div>
@@ -21,10 +65,10 @@ const Home = () => {
                     <button className="home-text-button">SHOP NOW</button>
                 </Link>
             </div>
-            <img src={home2} alt="pic2" />
-            <img src={home3} alt="pic3" />
-            <img src={home4} alt="pic4" />
-            <img src={home5} alt="pic5" />
+            <img src={home2} alt="pic2" id="img2" />
+            <img src={home3} alt="pic3" id="img3" />
+            <img src={home4} alt="pic4" id="img4" />
+            <img src={home5} alt="pic5" id="img5" />
         </div>
     );
 };

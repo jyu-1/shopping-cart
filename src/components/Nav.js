@@ -4,14 +4,14 @@ const Nav = (props) => {
     return (
         <nav>
             <Link to="/">
-                <div className="logo">LAUREN</div>
+                <div className="logo active-nav">LAUREN</div>
             </Link>
             <ul className="nav-links">
                 <Link to="/shop">
-                    <li>SHOP</li>
+                    <li className="active-nav">SHOP</li>
                 </Link>
                 <Link to="/cart">
-                    <li className="cart-align">
+                    <li className="cart-align active-nav">
                         <CartIcon />
                         <span className="cart-number">{props.itemCount}</span>
                     </li>

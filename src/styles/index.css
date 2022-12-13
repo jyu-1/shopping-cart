@@ -20,19 +20,23 @@ body {
 
 /* Nav Bar */
 nav {
-    flex: 0 0 50px;
+    flex: 0 0 100px;
     display: flex;
     justify-content: space-around;
     align-items: center;
     position: sticky;
     top: 0;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.8);
+}
+
+nav:hover {
+    background-color: rgba(255, 255, 255, 0.9);
 }
 
 .nav-links {
-    width: 30%;
     display: flex;
-    justify-content: space-around;
+    width: 15%;
+    justify-content: space-between;
     align-items: center;
     list-style: none;
 }
@@ -41,6 +45,40 @@ nav > a,
 .nav-links > a {
     color: black;
     text-decoration: none;
+    font-weight: bold;
+}
+
+.cart-align {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.cart-number {
+    padding: 0 10px;
+    height: 40px;
+    background: black;
+    position: relative;
+    color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    font-weight: bold;
+}
+.cart-number:before {
+    content: "";
+    position: absolute;
+    right: 100%;
+    top: 15px;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6px 12px 6px 0;
+    border-color: transparent #000000 transparent transparent;
+}
+
+.logo {
+    font-size: 3rem;
 }
 
 /* Main */

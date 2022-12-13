@@ -43,6 +43,7 @@ const Cart = (props) => {
                             </div>
                         );
                     })}
+                    <div>Total Price: ${props.totalPrice}</div>
                 </div>
             )}
         </div>

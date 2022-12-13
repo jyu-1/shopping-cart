@@ -6,12 +6,12 @@ import NotFound from "./Routes/NotFound";
 import Nav from "./components/Nav";
 import Footer from "./components/Footer";
 import ItemPage from "./components/ItemPage";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const RouteSwitch = () => {
     const [cartItem, setCartItem] = useState([]);
     const [itemCount, setItemCount] = useState(0);
-    const [totalPrice, setToalPrice] = useState(0);
+    const [totalPrice, setTotalPrice] = useState(0);
 
     const addItem = (itemObject, itemQuantity) => {
         setCartItem(() => {
@@ -33,16 +33,34 @@ const RouteSwitch = () => {
         setCartItem(cartItem.filter((item) => item.id !== itemId));
     };
 
+    const updateQuantity = () => {};
+
+    useEffect(() => {
+        setTotalPrice(
+            cartItem.reduce((total, current) => {
+                return total + current.price * current.quantity;
+            }, 0)
+        );
+    }, [cartItem]);
+
+    useEffect(() => {
+        setItemCount(cartItem.length);
+    }, [cartItem]);
+
     return (
         <BrowserRouter>
-            <Nav />
+            <Nav itemCount={itemCount} />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop addItem={addItem} />} />
                 <Route
                     path="/cart"
                     element={
-                        <Cart cartItem={cartItem} deleteItem={deleteItem} />
+                        <Cart
+                            cartItem={cartItem}
+                            deleteItem={deleteItem}
+                            totalPrice={totalPrice}
+                        />
                     }
                 />
                 <Route

@@ -41,10 +41,12 @@ const RouteSwitch = () => {
                 return total + current.price * current.quantity;
             }, 0)
         );
-    }, [cartItem]);
 
-    useEffect(() => {
-        setItemCount(cartItem.length);
+        setItemCount(
+            cartItem.reduce((total, current) => {
+                return total + current.quantity;
+            }, 0)
+        );
     }, [cartItem]);
 
     return (
@@ -60,6 +62,7 @@ const RouteSwitch = () => {
                             cartItem={cartItem}
                             deleteItem={deleteItem}
                             totalPrice={totalPrice}
+                            updateQuantity={updateQuantity}
                         />
                     }
                 />

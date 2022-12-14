@@ -31,7 +31,10 @@ const Cart = (props) => {
                     {props.cartItem.map((e) => {
                         return (
                             <div key={e.id}>
-                                <Link to={`/shop/${e.id}`}>
+                                <Link
+                                    to={`/shop/${e.id}`}
+                                    className="cart-item-image"
+                                >
                                     <img
                                         src={e.thumbnail}
                                         alt="item"
@@ -39,29 +42,35 @@ const Cart = (props) => {
                                         width={200}
                                     />
                                 </Link>
-                                <hr />
-                                <div>{e.title}</div>
-                                <div>${e.price}</div>
-                                Quantity
-                                <input
-                                    type="number"
-                                    placeholder="Quantity"
-                                    min={1}
-                                    value={e.quantity}
-                                    onChange={(event) => {
-                                        quantityValidity(
-                                            e.id,
-                                            Number(event.target.value)
-                                        );
-                                    }}
-                                />
-                                <button
-                                    onClick={() => {
-                                        props.deleteItem(e.id);
-                                    }}
-                                >
-                                    Remove Item
-                                </button>
+                                <div className="cart-item-title">{e.title}</div>
+                                <div className="cart-item-price">
+                                    ${e.price}
+                                </div>
+                                <div className="cart-item-quantity">
+                                    <button className="cart-decrease">-</button>
+                                    <input
+                                        type="number"
+                                        placeholder="Quantity"
+                                        min={1}
+                                        value={e.quantity}
+                                        onChange={(event) => {
+                                            quantityValidity(
+                                                e.id,
+                                                Number(event.target.value)
+                                            );
+                                        }}
+                                    />
+                                    <button className="cart-increase">+</button>
+                                </div>
+                                <div className="cart-item-button">
+                                    <button
+                                        onClick={() => {
+                                            props.deleteItem(e.id);
+                                        }}
+                                    >
+                                        Remove Item
+                                    </button>
+                                </div>
                             </div>
                         );
                     })}

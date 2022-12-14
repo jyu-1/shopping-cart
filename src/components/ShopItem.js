@@ -12,11 +12,16 @@ const ShopItem = (props) => {
                     width={300}
                 />
             </Link>
-            <hr />
+            <div className="shop-item-brand">{props.item.brand}</div>
             <div>{props.item.title}</div>
-            <StarReview rating={props.item.rating} /> ({props.item.rating})
-            <div>${props.item.price}</div>
+            <span>
+                <StarReview rating={props.item.rating} /> {props.item.rating}
+            </span>
+            <span>
+                $ <span className="shop-item-price">{props.item.price}</span>
+            </span>
             <button
+                className="shop-item-button"
                 onClick={() => {
                     props.addItem(props.item, 1);
                 }}

@@ -225,12 +225,44 @@ input[type="radio"]:checked:after {
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 75%;
+    margin: 50px 0;
 }
 
 /* Shop Item */
 .shop-item {
-    border: 1px solid grey;
+    border: 1px solid rgb(225, 225, 225);
     margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.shop-item-brand {
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-top: 10px;
+}
+
+.shop-item-price {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.shop-item-button {
+    height: 40px;
+    width: 250px;
+    margin-bottom: 20px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.shop-item-button:hover {
+    cursor: pointer;
+    background-color: rgb(50, 50, 50);
 }
 
 /* Item Page */

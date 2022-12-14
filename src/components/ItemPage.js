@@ -81,18 +81,32 @@ const ItemPage = (props) => {
                         </div>
                         <div>Free Shipping!</div>
                         <div className="item-page-quantity">
-                            <span className="item-decrease">-</span>
+                            <button
+                                className="item-decrease"
+                                onClick={() => {
+                                    quantityValidity(Number(quantity) - 1);
+                                }}
+                            >
+                                -
+                            </button>
                             <input
                                 className="item-page-input"
                                 type="number"
+                                value={quantity}
                                 placeholder="Quantity"
                                 min={1}
-                                value={quantity}
                                 onChange={(e) => {
                                     quantityValidity(Number(e.target.value));
                                 }}
                             />
-                            <span className="item-increase">+</span>
+                            <button
+                                className="item-increase"
+                                onClick={() => {
+                                    quantityValidity(Number(quantity) + 1);
+                                }}
+                            >
+                                +
+                            </button>
                         </div>
                         <button
                             className="item-page-add"

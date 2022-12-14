@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import catCart from "../assets/empty-cart.jpg";
 
 const Cart = (props) => {
     const [emptyCart, setEmptyCart] = useState(true);
@@ -25,7 +26,13 @@ const Cart = (props) => {
     return (
         <div className="main-flex">
             {emptyCart ? (
-                <div>Cart is Empty</div>
+                <div className="cart-empty">
+                    <img src={catCart} alt="cat cart" />
+                    <div>Your Cart is Empty</div>
+                    <Link to={`/shop/`}>
+                        <div>Click Here to Shop</div>
+                    </Link>
+                </div>
             ) : (
                 <div className="cart">
                     {props.cartItem.map((e) => {

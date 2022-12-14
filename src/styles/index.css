@@ -362,6 +362,22 @@ input::-webkit-inner-spin-button {
     background-color: rgb(50, 50, 50);
 }
 
+.cart-empty {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.cart-empty > div {
+    font-size: 3rem;
+}
+
+.cart-empty > a > div {
+    font-size: 2rem;
+    color: black;
+}
+
 /* Shop */
 .shop {
     display: flex;

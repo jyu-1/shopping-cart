@@ -430,6 +430,18 @@ input::-webkit-inner-spin-button {
     align-items: flex-start;
 }
 
+.item-page-error,
+.not-found-page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    font-weight: bold;
+    color: red;
+    text-align: center;
+}
+
 /* Footer */
 footer {
     flex: 0 0 50px;

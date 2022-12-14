@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import StarReview from "./StarReview";
+import errorImg from "../assets/error.jpg";
 
 const ItemPage = (props) => {
     const [item, setItem] = useState({ images: "" });
@@ -80,7 +81,10 @@ const ItemPage = (props) => {
                     </div>
                 </div>
             ) : (
-                <div>{errorMessage}</div>
+                <div className="item-page-error">
+                    <img src={errorImg} alt="dog" />
+                    <div>{errorMessage}</div>
+                </div>
             )}
         </div>
     );

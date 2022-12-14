@@ -30,7 +30,7 @@ const Cart = (props) => {
                 <div className="cart">
                     {props.cartItem.map((e) => {
                         return (
-                            <div key={e.id}>
+                            <div key={e.id} className="cart-items">
                                 <Link
                                     to={`/shop/${e.id}`}
                                     className="cart-item-image"
@@ -44,10 +44,20 @@ const Cart = (props) => {
                                 </Link>
                                 <div className="cart-item-title">{e.title}</div>
                                 <div className="cart-item-price">
-                                    ${e.price}
+                                    ${e.quantity * e.price}
                                 </div>
                                 <div className="cart-item-quantity">
-                                    <button className="cart-decrease">-</button>
+                                    <button
+                                        className="cart-decrease"
+                                        onClick={() => {
+                                            quantityValidity(
+                                                e.id,
+                                                Number(e.quantity) - 1
+                                            );
+                                        }}
+                                    >
+                                        -
+                                    </button>
                                     <input
                                         type="number"
                                         placeholder="Quantity"
@@ -60,7 +70,17 @@ const Cart = (props) => {
                                             );
                                         }}
                                     />
-                                    <button className="cart-increase">+</button>
+                                    <button
+                                        className="cart-increase"
+                                        onClick={() => {
+                                            quantityValidity(
+                                                e.id,
+                                                Number(e.quantity) + 1
+                                            );
+                                        }}
+                                    >
+                                        +
+                                    </button>
                                 </div>
                                 <div className="cart-item-button">
                                     <button
@@ -74,7 +94,14 @@ const Cart = (props) => {
                             </div>
                         );
                     })}
-                    <div>Total Price: ${props.totalPrice}</div>
+                    <div className="price-checkout-flex">
+                        <div className="cart-total-price">
+                            Total Price: ${props.totalPrice}
+                        </div>
+                        <button className="cart-checkout-button">
+                            Check Out
+                        </button>
+                    </div>
                 </div>
             )}
         </div>

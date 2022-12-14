@@ -217,7 +217,7 @@ input[type="radio"]:checked:after {
 
 /* Cart */
 
-.cart > div {
+.cart-items {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
@@ -332,6 +332,34 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
+}
+
+.cart-total-price {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.price-checkout-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding: 50px;
+    gap: 50px;
+}
+
+.cart-checkout-button {
+    height: 50px;
+    width: 200px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cart-checkout-button:hover {
+    cursor: pointer;
+    background-color: rgb(50, 50, 50);
 }
 
 /* Shop */

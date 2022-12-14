@@ -46,6 +46,8 @@ const ItemPage = (props) => {
     useEffect(() => {
         if (item.title !== undefined) {
             document.title = `Lauren Official | ${item.title}`;
+        } else {
+            document.title = `Lauren Official | Not Found`;
         }
     }, [item.title]);
 
@@ -53,25 +55,47 @@ const ItemPage = (props) => {
         <div className="main-flex">
             {goodFetch ? (
                 <div className="item-page">
-                    <img src={item.images[0]} alt="product" />
-                    <div>
-                        <div>Brand: {item.brand}</div>
-                        <div>{item.title}</div>
-                        <StarReview rating={item.rating} />({item.rating})
-                        <hr />
-                        <div>${item.price}</div>
-                        <div>{item.stock} in stock</div>
-                        <div>{item.description}</div>
-                        <input
-                            type="number"
-                            placeholder="Quantity"
-                            min={1}
-                            value={quantity}
-                            onChange={(e) => {
-                                quantityValidity(Number(e.target.value));
-                            }}
-                        />
+                    <img
+                        src={item.images[0]}
+                        alt="product"
+                        width={500}
+                        height={600}
+                    />
+                    <div className="item-page-rightside">
+                        <div className="item-page-brand">
+                            Brand: {item.brand}
+                        </div>
+                        <div className="item-page-title">{item.title}</div>
+                        <div className="item-page-price">${item.price}</div>
+                        <span className="item-page-rating">
+                            <StarReview rating={item.rating} /> {item.rating}
+                        </span>
+                        <div className="item-page-description">
+                            Description:
+                        </div>
+                        <div className="item-page-description-two">
+                            {item.description}
+                        </div>
+                        <div className="item-page-stock">
+                            {item.stock} in stock
+                        </div>
+                        <div>Free Shipping!</div>
+                        <div className="item-page-quantity">
+                            <span className="item-decrease">-</span>
+                            <input
+                                className="item-page-input"
+                                type="number"
+                                placeholder="Quantity"
+                                min={1}
+                                value={quantity}
+                                onChange={(e) => {
+                                    quantityValidity(Number(e.target.value));
+                                }}
+                            />
+                            <span className="item-increase">+</span>
+                        </div>
                         <button
+                            className="item-page-add"
                             onClick={() => {
                                 props.addItem(item, quantity);
                             }}

@@ -262,7 +262,8 @@ input[type="radio"]:checked:after {
     align-items: center;
 }
 
-.cart-item-quantity > input {
+.cart-item-quantity > input,
+.item-page-input {
     text-align: center;
     height: 50px;
     width: 150px;
@@ -272,7 +273,8 @@ input[type="radio"]:checked:after {
     font-size: 1rem;
 }
 
-.cart-decrease {
+.cart-decrease,
+.item-decrease {
     height: 50px;
     width: 50px;
     border: none;
@@ -284,12 +286,14 @@ input[type="radio"]:checked:after {
     background-color: rgb(150, 150, 150);
 }
 
-.cart-decrease:hover {
+.cart-decrease:hover,
+.item-decrease:hover {
     cursor: pointer;
     background-color: rgb(125, 125, 125);
 }
 
-.cart-increase {
+.cart-increase,
+.item-increase {
     height: 50px;
     width: 50px;
     border: none;
@@ -301,7 +305,8 @@ input[type="radio"]:checked:after {
     background-color: rgb(167, 233, 255);
 }
 
-.cart-increase:hover {
+.cart-increase:hover,
+.item-increase:hover {
     cursor: pointer;
     background-color: rgb(130, 224, 255);
 }
@@ -428,6 +433,46 @@ input::-webkit-inner-spin-button {
     display: flex;
     justify-content: center;
     align-items: flex-start;
+    margin: 50px 0;
+    gap: 50px;
+}
+
+.item-page-rightside {
+    flex: 0 0 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.item-page-title {
+    font-size: 2rem;
+    font-weight: bold;
+    width: 100%;
+    padding-bottom: 20px;
+}
+
+.item-page-price {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-bottom: 20px;
+}
+
+.item-page-rating {
+    border-bottom: 1px solid black;
+    width: 100%;
+    padding-bottom: 40px;
+}
+
+.item-page-description {
+    padding-top: 30px;
+    font-size: 1.25rem;
+}
+
+.item-page-description-two {
+    width: 100%;
+    padding-bottom: 40px;
+    font-size: 1.25rem;
 }
 
 .item-page-error,
@@ -438,8 +483,23 @@ input::-webkit-inner-spin-button {
     align-items: center;
     font-size: 3rem;
     font-weight: bold;
-    color: red;
+    color: rgb(200, 0, 0);
     text-align: center;
+}
+
+.item-page-quantity {
+    display: flex;
+    padding-top: 40px;
+}
+
+.item-page-add {
+    height: 50px;
+    width: 250px;
+    border: none;
+    background-color: black;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 /* Footer */

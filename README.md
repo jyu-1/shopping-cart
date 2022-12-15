@@ -1,7 +1,9 @@
 # Shopping Cart
 
 This project was created using create-react-app.\
-React routing is used for this project.
+This website simulates a real store with ability to add/delete items to shopping cart and viewing their details.\
+All shop items are provided from an API that provides fake store items.\
+React routing is used to create a single page application.
 
 ## Live Preview
 

@@ -78,7 +78,7 @@ const RouteSwitch = () => {
     };
 
     return (
-        <BrowserRouter>
+        <BrowserRouter basename="/">
             <Nav
                 cartItem={cartItem}
                 deleteItem={deleteItem}

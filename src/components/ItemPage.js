@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import StarReview from "./StarReview";
 import errorImg from "../assets/error.jpg";
+import ImageSlider from "./ImageSlider";
 
 const ItemPage = (props) => {
     const [item, setItem] = useState({ images: "" });
@@ -55,12 +56,7 @@ const ItemPage = (props) => {
         <div className="main-flex">
             {goodFetch ? (
                 <div className="item-page">
-                    <img
-                        src={item.images[0]}
-                        alt="product"
-                        width={500}
-                        height={600}
-                    />
+                    <ImageSlider slides={item.images} />
                     <div className="item-page-rightside">
                         <div className="item-page-brand">
                             Brand: {item.brand}

@@ -502,6 +502,62 @@ input::-webkit-inner-spin-button {
     font-weight: bold;
 }
 
+/* Image Slider */
+.slider {
+    position: relative;
+}
+
+.slider-prev-button {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    z-index: 2;
+    background: none;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 0.5rem;
+    border-radius: 2px;
+}
+
+.slider-next-button {
+    position: absolute;
+    top: 50%;
+    right: 0.5rem;
+    z-index: 2;
+    background: none;
+    border: none;
+    transform: translateY(-50%);
+    cursor: pointer;
+    font-size: 3rem;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: rgba(255, 255, 255, 0.5);
+    padding: 0 0.5rem;
+    border-radius: 2px;
+}
+
+.slider-prev-button:hover,
+.slider-next-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.slider-selector {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.slider-selector-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 2rem;
+}
+
 /* Footer */
 footer {
     flex: 0 0 50px;

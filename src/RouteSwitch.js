@@ -62,7 +62,13 @@ const RouteSwitch = () => {
 
     return (
         <BrowserRouter>
-            <Nav itemCount={itemCount} />
+            <Nav
+                cartItem={cartItem}
+                deleteItem={deleteItem}
+                totalPrice={totalPrice}
+                updateQuantity={updateQuantity}
+                itemCount={itemCount}
+            />
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/shop" element={<Shop addItem={addItem} />} />

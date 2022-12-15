@@ -123,6 +123,221 @@ li.active-nav {
     bottom: 5px;
 }
 
+/* Modal */
+
+.modal {
+    position: fixed;
+    right: -30vw;
+    top: 0;
+    height: 100vh;
+    width: 30vw;
+    transition: right 0.3s ease-out;
+    z-index: 10;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+}
+
+.modal.show {
+    right: 0;
+}
+
+.modal-overlay {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    display: none;
+    z-index: 5;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-overlay.show {
+    display: block;
+}
+
+.modal-sticky {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    width: 100%;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.modal-checkout {
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: white;
+    background-color: black;
+    border: none;
+}
+
+.modal-close {
+    cursor: pointer;
+    height: 50px;
+    width: 150px;
+    font-size: 1rem;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+
+.modal-checkout:hover {
+    background-color: rgb(50, 50, 50);
+}
+
+.modal-close:hover {
+    background-color: rgb(200, 200, 200);
+}
+
+.modal-cart-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 100px;
+}
+
+.modal-cart-empty > div {
+    font-size: 2rem;
+}
+
+.modal-cart-empty > a > div {
+    font-size: 1.5rem;
+    color: black;
+}
+
+.modal-cart-empty > img {
+    width: 400px;
+    height: auto;
+}
+
+.modal-cart-items {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding: 50px;
+    border-bottom: 1px solid black;
+}
+
+.modal-cart-item-image {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-cart-item-title {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-cart-item-price {
+    grid-column: 3 / 4;
+    grid-row: 1 / 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.modal-cart-item-quantity {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-cart-item-quantity > input,
+.modal-item-page-input {
+    text-align: center;
+    height: 40px;
+    width: 100px;
+    border: none;
+    font-weight: bold;
+    background-color: rgb(240, 240, 240);
+    font-size: 1rem;
+}
+
+.modal-cart-decrease,
+.modal-item-decrease {
+    height: 40px;
+    width: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgb(150, 150, 150);
+}
+
+.modal-cart-decrease:hover,
+.modal-item-decrease:hover {
+    cursor: pointer;
+    background-color: rgb(125, 125, 125);
+}
+
+.modal-cart-increase,
+.modal-item-increase {
+    height: 40px;
+    width: 40px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    font-weight: bold;
+    background-color: rgb(167, 233, 255);
+}
+
+.modal-cart-increase:hover,
+.modal-item-increase:hover {
+    cursor: pointer;
+    background-color: rgb(130, 224, 255);
+}
+
+.modal-cart-item-button {
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-cart-item-button > button {
+    height: 40px;
+    width: 140px;
+    border: none;
+    background-color: pink;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.modal-cart-item-button > button:hover {
+    cursor: pointer;
+    background-color: rgb(255, 167, 181);
+}
+
 /* Main */
 .main-flex {
     flex: 1;
@@ -500,6 +715,11 @@ input::-webkit-inner-spin-button {
     color: white;
     font-size: 1rem;
     font-weight: bold;
+    cursor: pointer;
+}
+
+.item-page-add:hover {
+    background-color: rgb(50, 50, 50);
 }
 
 /* Image Slider */

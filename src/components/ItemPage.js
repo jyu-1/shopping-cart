@@ -108,6 +108,7 @@ const ItemPage = (props) => {
                             className="item-page-add"
                             onClick={() => {
                                 props.addItem(item, quantity);
+                                props.enableModal();
                             }}
                         >
                             Add to Cart

@@ -12,6 +12,7 @@ const RouteSwitch = () => {
     const [cartItem, setCartItem] = useState([]);
     const [itemCount, setItemCount] = useState(0);
     const [totalPrice, setTotalPrice] = useState(0);
+    const [displayModal, setDisplayModal] = useState(false);
 
     const addItem = (itemObject, itemQuantity) => {
         setCartItem(() => {
@@ -60,6 +61,22 @@ const RouteSwitch = () => {
         );
     }, [cartItem]);
 
+    useEffect(() => {
+        if (displayModal === true) {
+            document.body.style.overflow = "hidden";
+        } else {
+            document.body.style.overflow = "unset";
+        }
+    }, [displayModal]);
+
+    const disableModal = () => {
+        setDisplayModal(false);
+    };
+
+    const enableModal = () => {
+        setDisplayModal(true);
+    };
+
     return (
         <BrowserRouter>
             <Nav
@@ -68,10 +85,18 @@ const RouteSwitch = () => {
                 totalPrice={totalPrice}
                 updateQuantity={updateQuantity}
                 itemCount={itemCount}
+                enableModal={enableModal}
+                disableModal={disableModal}
+                displayModal={displayModal}
             />
             <Routes>
                 <Route path="/" element={<Home />} />
-                <Route path="/shop" element={<Shop addItem={addItem} />} />
+                <Route
+                    path="/shop"
+                    element={
+                        <Shop addItem={addItem} enableModal={enableModal} />
+                    }
+                />
                 <Route
                     path="/cart"
                     element={
@@ -86,7 +111,9 @@ const RouteSwitch = () => {
                 />
                 <Route
                     path="/shop/:id"
-                    element={<ItemPage addItem={addItem} />}
+                    element={
+                        <ItemPage addItem={addItem} enableModal={enableModal} />
+                    }
                 />
                 <Route path="*" element={<NotFound />} />
             </Routes>

@@ -1,22 +1,8 @@
-import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import PopupCart from "./PopupCart";
 
 const Nav = (props) => {
     const activeClassName = "active-nav-class";
-    const [displayModal, setDisplayModal] = useState(false);
-
-    const disableModal = () => {
-        setDisplayModal(false);
-    };
-
-    useEffect(() => {
-        if (displayModal === true) {
-            document.body.style.overflow = "hidden";
-        } else {
-            document.body.style.overflow = "unset";
-        }
-    }, [displayModal]);
 
     return (
         <nav>
@@ -40,7 +26,7 @@ const Nav = (props) => {
                 <li
                     className="cart-align active-nav"
                     onClick={() => {
-                        setDisplayModal(true);
+                        props.enableModal();
                     }}
                 >
                     <CartIcon />
@@ -48,8 +34,8 @@ const Nav = (props) => {
                 </li>
             </ul>
             <PopupCart
-                displayModal={displayModal}
-                disableModal={disableModal}
+                displayModal={props.displayModal}
+                disableModal={props.disableModal}
                 cartItem={props.cartItem}
                 deleteItem={props.deleteItem}
                 totalPrice={props.totalPrice}

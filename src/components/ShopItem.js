@@ -24,6 +24,7 @@ const ShopItem = (props) => {
                 className="shop-item-button"
                 onClick={() => {
                     props.addItem(props.item, 1);
+                    props.enableModal();
                 }}
             >
                 Add To Cart

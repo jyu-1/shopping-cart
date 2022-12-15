@@ -43,6 +43,7 @@ const Shop = (props) => {
                             key={item.id}
                             item={item}
                             addItem={props.addItem}
+                            enableModal={props.enableModal}
                         />
                     ))}
                 </div>
